@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CountUp Test</title>
+</head>
+<body>
+
+  <h1>GPA: <span id="decimalCounter">0.00</span></h1>
+
+  <!-- ✅ Use the global version -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/1.9.3/countUp.min.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const counter = new CountUp("decimalCounter", 3.87, 2, 0, 2); 
+      //        ^ targetId      ^ endVal ^ decimals ^ startVal ^ duration
+
+      if (!counter.error) {
+        counter.start();
+      } else {
+        console.error("CountUp error:", counter.error);
+      }
+    });
+  </script>
+
+</body>
+</html>
+
